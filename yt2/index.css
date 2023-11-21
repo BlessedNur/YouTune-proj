@@ -1,0 +1,52 @@
+.hhh{
+    width: 7rem;
+    height: 2rem;
+    background: rgba(128, 128, 128, .9);
+    /* margin-left: 10rem; */
+    /* margin-top: 5rem; */
+    top: 5rem;
+    left: 12rem;
+    /* position: relative; */
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    padding-top:7px ;
+    font-family: "roboto", "Arial", sans-serif;
+    font-variant: small-caps;
+    font-weight: bolder;
+    text-decoration: line-through;
+    /* padding-bottom: 0; */
+    cursor: pointer;
+    transition: 1s;
+
+}
+.hhh:hover .hov::after{
+    transition: 1s;
+}
+.hov{
+    background:rgba(128, 128, 128, .9) ;
+    /* margin-bottom: 5rem; */
+    /* position: absolute; */
+    display: none;
+    left: 200px;
+    width: 6.2%;
+    text-align: center;
+    border-radius: 10px;
+    height: 2rem;
+    font-variant: small-caps;
+padding-top: px;
+/* animation-delay: 20s; */
+
+
+}
+.hhh:hover + .hov{
+    display: block;
+    transition: 10s;
+}
+h1{
+    font-size: 15px;
+    /* margin-bottom: 6px; */
+    /* animation-delay: 5s; */
+    /* transition: 5s; */
+    padding-top: 8px;
+}
