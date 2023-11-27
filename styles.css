@@ -895,7 +895,7 @@ overflow-x: hidden;
     margin-right: 1.5rem;
     background: hsl(0, 0%, 7%);
     width: 14.7rem;
-    display: none;
+    /* display: none; */
     z-index: 1;
 }
 .close-text p{
