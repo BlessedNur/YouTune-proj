@@ -6,21 +6,30 @@
 .videos{
     /* background: blue; */
     /* width: max-content; */
+    margin-right: 2rem;
     margin-left: 5rem;
-    overflow: scroll;
-    max-height: 700px;
-    margin-top: 1.4rem;
+    /* display: none; */
+}
+.shorts-two{
+    margin-left: 5rem;
+    margin-right: 2rem;
+
+
 }
 body{
     margin: 0;
+
 }
+
 .video-section{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax( 250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax( 265px, 1fr));
     gap: 3rem 1rem;
-    /* display: flex; */
+    /* background: red; */
     margin-top: -2rem;
     padding: 3rem 0;
+    overflow: hidden;
+    height: 225vh;
 }
 /* ========================
 VIDEO CONTAINER
@@ -29,6 +38,8 @@ VIDEO CONTAINER
 .video-container{
     display: flex;
     flex-direction: column;
+    /* background: blue; */
+
     /* width: 100%; */
     margin: 0;
     margin-bottom: -1.3rem;
@@ -49,11 +60,14 @@ VIDEO CONTAINER
     border-radius: 6px;
     font-size: 11px;
 }
-.thumbnail:hover::before{
+
+.video-container:hover .thumbnail::before {
+    
     background-color: transparent;
     color: transparent;
     transition: .3s;
 }
+
 .thumbnail-image{
     width: 100%;
     border-radius: 10px;
@@ -62,7 +76,7 @@ VIDEO CONTAINER
     min-height: 150px;
     background-color: #AAA;
 }
-.thumbnail-image:hover{
+ .video-container:hover .thumbnail-image{
     border-radius: 0;
     transition: .6s;
 }
@@ -299,6 +313,8 @@ position: static;
     margin-top: -.5rem;
     margin-bottom: -1.8rem;
     width: 100%;
+    position: relative;
+    z-index: -1;
     /* background: red; */
 }
 .category-section{
@@ -307,7 +323,6 @@ position: static;
     overflow: scroll;
 
 
-    /* overflow: hidden; */
 }
 
 .category-section::-webkit-scrollbar-corner{
@@ -357,12 +372,11 @@ nav {
     /* gap: 3rem 1rem; */
     padding: 1rem 0;
     width: 100%;
-    /* position: absolute; */
     margin: 0 8rem;
+    /* background: red; */
     margin-right: 3rem;
-    margin-top: -1rem;
     margin-left: -1px;
-    /* background: white; */
+    
 }
 
 
@@ -371,6 +385,8 @@ nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* background: blue; */
+    margin-top: -1rem;
 }
 
 svg {
@@ -395,7 +411,7 @@ svg {
 
 }
 .harmburger-menu{
-    margin-left: 10px;
+    margin-left: 6px;
     width: 35px;
     height: 33px;
     align-items: center;
@@ -477,12 +493,14 @@ svg {
 
 }
 .user{
-    background: gray;
-    width: 28px;
-    height: 28px;
+    background: url(./images/profile/Kaws-Wallpaper-4K.jpg);
+    background-size: cover;
+    width: 35px;
+    height: 35px;
     margin: 10px;
     border-radius: 30px;
     margin-left: 20px;
+    cursor: pointer;
 }
 /* .bell{
     margin-left: -20px;
@@ -490,7 +508,6 @@ svg {
 } */
 
 .middle {
-
     display: flex;
     align-items: center;
     margin-top: 7px;
@@ -517,7 +534,7 @@ svg {
     display: flex;
     align-items: center;
     /* margin-top: -.1rem; */
-    
+    margin-right: 1.65rem;
 }
 
 .text {
@@ -526,47 +543,56 @@ svg {
 
 .Search-container {
     width: 700px;
-    height: 40px;
+    height: 50px;
     position: relative;
     display: flex;
+    margin-left: 8rem;
     /* margin-top: -2.6px; */
 
 }
 
+
 .Search-container input {
-    width: 64%;
+    width: 80%;
     height: 80%;
     color: white;
     /* padding-right: -20px; */
-    font-size: .88rem;
+    font-size: 1rem;
     padding: 0 0.5rem;
     outline: none;
     margin-left: 6rem;
-    border-left: 1px solid rgb(37, 37, 37);
-    border-top: 1px solid rgb(37, 37, 37);
-    border-bottom: 1px solid rgb(37, 37, 37);
+    border-left: 1px solid rgb(48, 47, 47);
+    border-top: 1px solid rgb(48, 47, 47);
+    border-bottom: 1px solid rgb(48, 47, 47);
     border-right: none;
-    box-shadow: inset 0 0.01rem 0.01rem rgba(0, 0, 0, 0.2);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     background: hsl(0, 0%, 7%);
     padding-left: 1rem;
-    
    /* align-items: center; */
 }
 .Search-container input:focus{
-    border: 1px solid rgb(76, 76, 231);
+    border: 1px solid rgb(98, 98, 243);
+}
+.svg-search{
+    fill: white;
+    position: absolute;
+    visibility: hidden;
+}
+.Search-container:focus .svg-search{
 
+    visibility: visible;
 }
 .Search-container .search-icon {
-    width: 61px;
-    height: 32px;
+    width: 64px;
+    height: 40px;
     background-color: rgb(37, 37, 37);
     
     /* border:  solid black; */
     transition: all 1s;
     position: relative;
     border-radius: 50px;
+    border: 1px solid rgb(48, 47, 47);
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
 
@@ -578,11 +604,11 @@ svg {
 }
 
 .mic {
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     border-radius: 20px;
     margin-top: -10px;
-    margin-left: -5rem;
+    margin-left: .8rem;
     margin-right: 9rem;
     background-color: rgb(37, 37, 37);
     position: relative;
@@ -605,7 +631,7 @@ svg {
     white-space: nowrap;
     position: absolute;
     margin-top: 5.3rem;
-    font-size: 10px;
+    font-size: 11px;
     padding: 8px;
     border-radius: 5px;
     visibility: hidden;
@@ -616,13 +642,6 @@ svg {
 .mic:hover .hover-text{
     visibility: visible;
     transition-delay: .11s;
-}
-aside {
-    width: 20%;
-    background-color: ghostwhite;
-    float: left;
-
-
 }
 
 
@@ -638,11 +657,14 @@ body::-webkit-scrollbar {
 
 }
 body{
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     
 }
 
 
+body::-webkit-scrollbar-corner{
+
+}
 body::-webkit-scrollbar-thumb {
 
     background-color: hsl(0, 3%, 71%);
@@ -673,11 +695,12 @@ margin-left: .8rem;
 }
 .left-aside{
 
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     margin-left: .3rem;
-
     margin-top: -21px;
     cursor: pointer;
+    display: none;
 }
 .home-text{
     font-size: 9px;
@@ -726,37 +749,35 @@ body{
 }
 
 .shorts{
-    /* grid-column: 1 / -1; */
-    /* align-items: center; */
-    position: relative;
-    display: flex;
-    /* width: max-content; */
+    margin-left: 5rem;
+    margin-right: 2rem;    
+}
+.sht{
     justify-content: space-between;
+    display: flex;
 
-}.shorts h2{
+}
+.shorts h2{
     /* background: white; */
     height: 80px;
     line-height: 80px;
     width: 90%;
     color: white;
-    font-size: 15px;
+    font-size: 17px;
     font-family: "Roboto", "Arial", sans-serif;
     font-weight: 600;
 }
 
 .shorts-c{
     margin-top: 25px;
-     width: 30px;
-    height: 30px;
-    right: 1rem;
+     width: 40px;
+    height: 40px;
     color: rgb(253, 250, 250);
     background: hsl(0, 0%, 7%);
     border: none;
-    line-height: 30px;
-    position: absolute;
-    font-size: 2rem;
+    font-size: 2.3rem;
+    text-align: center;
     font-weight: 100;
-    
     font-family: 'Lato', sans-serif;
 }
 
@@ -769,23 +790,32 @@ button:hover{
     background: #616161;
     border-radius: 25px;
     /* width: 50px; */
+    cursor: pointer;
     transition: .1s;
     transition-delay: .1s;
     position: relative;
 
 
 }
+.not{
+    width: max-content;
+    text-align: center;
+    height: 0px;
+    display: flex;
+}
 .notin{
-    font-size: 10px;
-position: absolute;
+    font-size: 11.7px;
+    margin-right: 1rem;
+    height: 31px;
+    width: max-content;
+    margin-top: 31px;
+    padding: 6px 10px;
+    line-height: 20px;
     letter-spacing: .1mm;
     word-spacing: .1px;
     background: #616161;
-    padding:   7px 6px;
     color: white;
-    top: 1.7rem;
-    right: 3.5rem;
-    border-radius: 5px;
+    border-radius: 7px;
     visibility: hidden;
     
 
@@ -797,25 +827,28 @@ position: absolute;
 
 .shorts-section{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax( 220px, 1fr));
-
+    padding: 3rem 0;
+    /* background: red; */
+    overflow: hidden;
+    height: 115vh;
+    grid-template-columns: repeat(auto-fill, minmax( 205px, 1fr));
+    gap: 3rem 1rem;
 }
 .shorts-container img{
     border-radius: 15px;
 }
 
 .shorts-container{
-    width: 95%;
     color: white;
-    /* background: gold; */
     display: flex;
+    /* background: blue; */
+    margin: 0;
     justify-content: space-between;
     flex-direction: column;
 }
 .shorts-title{
     float: left;
     /* background: blue; */
-    width: 90%;
     font-size: 14px;
 }.shorts-meta-data{
     font-size: 13px;
@@ -828,4 +861,121 @@ position: absolute;
     visibility: hidden;
 }
 
+.sidebar::-webkit-scrollbar {
+    width: .2px;
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb {
+    opacity: 0;
+        border-radius: 1rem;
+    }
+    
+    
+    .sidebar::-webkit-scrollbar {
+        width: 0.4rem;
+    
+    }
+    
+    .sidebar:hover::-webkit-scrollbar-thumb {
+    
+        background-color: #999898;
+    }
+aside{
+    height: 300vh;
+    float: left;
+}
+.sidebar{
+    overflow: scroll;
+    fill: white;
+overflow-x: hidden;
+    color: white;
+    height: 95vh;
+    padding: 12px;
+    margin-top: -1rem;
+    margin-right: 1.5rem;
+    background: hsl(0, 0%, 7%);
+    width: 14.7rem;
+    /* display: none; */
+    z-index: 1;
+}
+.close-text p{
+    font-size: 10px;
+    padding: 12px 13px ;
+    word-spacing: 5px;
+}
+.items p{
+    margin-left: 1.3rem;
+    font-size: 14px;
+}
+.items svg{
+    margin-left: -.4rem;
+  
+}
+.items{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding:  8px 15px;
+    
+    /* margin-right: -.3rem; */
+    /* margin-left: .5rem; */
+}
+.items:hover{
+    background-color: #2e2d2d;
+    border-radius: 8px;
+}
+.line{
 
+    height: 1px;
+    background-color: #4d4c4c;
+    margin: .7rem;
+    width: 210px;
+    margin-left: -.05rem;
+}
+.nav-two a{
+    color: none;
+    fill: white;
+}
+.nav-two{
+    display: flex;
+    position: absolute;
+    top: 0;
+    background: hsl(0, 0%, 7%);
+    height: 50px;
+    width: 12.3rem;
+    left: 0;
+    /* background: red; */
+    margin: 0;
+}
+.ham{
+    margin-right: 1.2rem; 
+     margin-left: 1.1rem;
+     margin-top: -.3rem;
+}
+
+.headerr{
+font-size: 16px;
+font-weight: 500;
+float: left;
+padding:  5px 15px;
+
+margin-left: -1.1rem;
+
+}
+.active{
+    background:  #2e2d2d;
+    padding-top: 7px;
+    border-radius: 8px;
+}
+.whole{
+    position: sticky;
+    top: 0;
+    background: hsl(0, 0%, 7%);
+z-index: 1;
+}
+.exc:hover{
+    background: none;
+}
+.sml{
+    color: #717171;
+}
