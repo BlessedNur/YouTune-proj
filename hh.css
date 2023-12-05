@@ -1,7 +1,0 @@
-svg{
-    fill: red;
-}
-svg:hover{
-    margin-left: 10px;
-    transition: 1s
-}
